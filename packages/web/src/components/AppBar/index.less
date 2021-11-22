@@ -1,0 +1,109 @@
+.App-Bar {
+  padding: 0px;
+  justify-content: space-between !important;
+
+  button.ant-btn:not(.connector) {
+    height: 32px;
+    background: none;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  padding: 10px 14px 10px 6px;
+
+  margin-bottom: 0px;
+}
+.header-logo-txt {
+  position: absolute;
+width: 101px;
+height: 27px;
+left: 112px;
+top: 32px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height */
+
+letter-spacing: -0.025em;
+
+color: #FFFFFF;
+}
+.header-search {
+ margin: auto;
+ margin-left: 20px;
+  width: 415px;
+  height: 39px;
+  
+  
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/howto/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.divider {
+  border-left: 1px solid #282828;
+  width: 2px;
+  height: 40px;
+  margin-right: 14px;
+}
+.wallet-wrapper {
+  padding-right: 0.7rem;
+}
+.app-btn {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  border-width: 0px;
+  color: black;
+  font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height */
+
+letter-spacing: -0.025em;
+
+color: #494949;
+}
+
+.app-bar-inner {
+  display: flex;
+  min-width: 50%;
+  justify-content: center;
+  position: relative;
+  height: auto;
+  .app-bar-item {
+    cursor: pointer;
+    padding: 0 30px;
+    color: @tungsten-60;
+    font-size: 18px;
+    a {
+      color: inherit;
+    }
+    &.active {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,406 @@
+header.ant-layout-header.App-Bar {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  background-color: white;
+  z-index: 10;
+}
+
+footer.ant-layout-footer {
+  padding: 10px 0;
+  width: 100%;
+}
+.Signup-title h1{
+  width: 253px;
+  height: 48px;
+  font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 48px;
+/* identical to box height */
+padding: 0;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+.Signup-title h3{
+  width: 468px;
+  height: 42px;
+  font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #FFFFFF;
+}
+
+.ant-layout-sider {
+  background-color: unset;
+}
+// .slick-prev {
+//   margin-left: 54px;
+//   z-index: 100;
+// }
+// .slick-next {
+//   margin-right: 54px;
+//   z-index: 100;
+// }
+.Create-NFT-Title h1 {
+  max-width: 415px;
+font-weight: bold;
+font-size: 42.9474px;
+line-height: 64px;
+letter-spacing: -0.025em;
+margin-top: 20px;
+padding: 0;
+color: #FFFFFF;
+text-align: left;
+}
+.Create-NFT-Title {
+  padding-top: 40px;
+}
+.Create-NFT-Title h2 {
+  margin-top: 20px;
+
+  max-width: 415px;
+font-weight: bold!important;
+line-height: 64px!important;
+letter-spacing: -0.025em!important;
+padding: 0!important;
+color: #FFFFFF!important;
+text-align: left;
+}
+.Create-NFT-Title h3 {
+  margin-top: 20px;
+
+max-width: 427px;
+top: 377px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: -0.025em;
+text-align: left;
+color: #FFFFFF;
+
+}
+a:link {
+  color: #b480eb;
+}
+a:visited {
+  color: #b480eb;
+}
+a:hover {
+  color: #b480eb;
+}
+a:active {
+  color: #b480eb;
+}
+.Tranding-Art {
+  width: 323px!important;
+  height:392px!important;
+  background: #FFFFFF!important;
+  border: 6px solid #938eb7!important;
+  border-radius: 28.0982px!important;
+  margin-left:10px!important;
+}
+.masonry-grid {
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: -32px !important;
+}
+
+.masonry-grid_column {
+  padding-left: 32px !important; /* gutter size */
+  background-clip: padding-box;
+}
+
+.masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
+}
+.ant-tabs-ink-bar {
+  display: none;
+}
+.ant-tabs-top > .ant-tabs-nav::before,
+.ant-tabs-top > div > .ant-tabs-nav::before {
+  display: none;
+}
+.ant-tabs-top > .ant-tabs-nav,
+.ant-tabs-bottom > .ant-tabs-nav,
+.ant-tabs-top > div > .ant-tabs-nav,
+.ant-tabs-bottom > div > .ant-tabs-nav {
+  margin-bottom: 24px;
+}
+.collection-count {
+  font-family: Poppins; 
+  font-style: normal; 
+  padding: 0;
+  font-weight: bold; 
+  font-size: 32px; 
+  line-height: 103%; 
+  text-align: center; 
+  letter-spacing: -0.025em; 
+  color: #FFFFFF;
+  align-self: center;
+
+}
+
+.ant-tabs-tab + .ant-tabs-tab {
+  margin-left: 8px;
+}
+.ant-tabs-tab {
+  /* Auto Layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  height: 40px;
+  opacity: 0.8;
+  &.ant-tabs-tab-active {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 24px rgba(26, 26, 26, 0.12);
+    border-radius: 8px;
+    opacity: 1;
+
+    .ant-tabs-tab-btn {
+      color: white;
+    }
+  }
+
+  .ant-tabs-tab-btn {
+    display: flex;
+    align-items: center;
+  }
+  span.live {
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+
+    background: @metaplex-primary-color;
+    box-shadow: 0px 0px 12px @metaplex-primary-color;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 12px;
+  }
+}
+
+/* Optional, different gutter size on mobile */
+@media (max-width: 800px) {
+  .masonry-grid {
+    margin-left: -15px; /* gutter size offset */
+  }
+  .masonry-grid_column {
+    padding-left: 15px; /* gutter size offset */
+  }
+  .masonry-grid_column > div {
+    margin-bottom: 15px; /* space between items */
+  }
+}
+
+.ant-card-body {
+  padding: 0;
+}
+
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color:#21447F;
+  
+  .block-access-footer-image {
+    margin-top: 15px;
+  }
+  .sub-header {
+    color: @accent-color;
+    font-weight: bold;
+  }
+
+  .subscriber-text{
+    color: @accent-color;
+    font-size: 1.2em;
+  }
+  .footer-input {
+    border-bottom: solid @subtext-color;
+    color: @subtext-color;
+  }
+  .footer-input::placeholder{
+    color: @subtext-color;
+  }
+  .footer-link {
+    color: @subtext-color;
+  }
+  .footer-button {
+    width: fit-content !important;
+    color: @accent-color;
+    height: 40px;
+    border: 0;
+    
+  }
+
+  .footer-sign-up {
+    .ant-form-item-control-input-content {
+      display: flex;
+    }
+  }
+  .subscriber-container {
+    max-width: 20%;
+    @media (max-width: @mobile-breakpoint) {
+      max-width: 100%;
+    }
+  }
+  .footer-section-container {
+    @media (max-width: @mobile-breakpoint) {
+      width: 100%;
+      margin-top: 35px;
+    }
+
+  }
+
+  @media (max-width: @mobile-breakpoint) {
+    width: 95vw;
+    margin-top: 20px;
+  }
+
+  .footer-title {
+    display: flex;
+    @media (max-width: @mobile-breakpoint) {
+      flex-direction: column;
+    }
+
+    img {
+      width: 6vw;
+
+      @media (max-width: @mobile-breakpoint) {
+        width: 18vw;
+      }
+    }
+
+    .footer-title-text {
+      font-size: 1rem;
+      margin-left: 27px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 7vw;
+
+      @media (max-width: @mobile-breakpoint) {
+        height: 14vw;
+        margin-left: 0px;
+      }
+
+      .header {
+        font-size: 2.2vw;
+        line-height: 1;
+        @media (max-width: @mobile-breakpoint) {
+          font-size: 5vw;
+          margin-top: 15px;
+        }
+      }
+
+      .subheader {
+        font-size: 1.2vw;
+        line-height: 1;
+        color: @accent-color;
+        @media (max-width: @mobile-breakpoint) {
+          font-size: 3.8vw;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .footer-info {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: @mobile-breakpoint) {
+      flex-direction: column;
+    }
+
+    div.body-text {
+      opacity: 1;
+    }
+
+    .footer-community {
+      @media (max-width: @mobile-breakpoint) {
+        margin-right: 0;
+        margin-top: 10px;
+        margin-bottom: 60px;
+      }
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 16px;
+
+      @media (max-width: @mobile-breakpoint) {
+        width: unset;
+      }
+
+      .footer-icon-btn {
+        border: unset;
+        background: transparent;
+      }
+    }
+  }
+
+  .footer-icon {
+    margin-top: 6px;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
+
+  .footer-foot {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    @media (max-width: @mobile-breakpoint) {
+      flex-direction: column-reverse;
+    }
+
+    div.body-text {
+      a {
+        padding: 0 20px;
+        text-align: center;
+        color: white !important;
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        @media (max-width: @mobile-breakpoint) {
+          padding: 0 50px 20px 0;
+        }
+      }
+
+      @media (max-width: @mobile-breakpoint) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+}
+

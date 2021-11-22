@@ -1,0 +1,173 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Menu, Modal } from 'antd';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { Notifications } from '../Notifications';
+import useWindowDimensions from '../../utils/layout';
+import { MenuOutlined } from '@ant-design/icons';
+import { HowToBuyModal } from '../HowToBuyModal';
+// import { ReactComponent as Logo } from "./logo.svg";
+// import {companyLogo} from '../../../public/Vector.png';
+import {
+  Cog,
+  CurrentUserBadge,
+  CurrentUserBadgeMobile,
+} from '../CurrentUserBadge';
+import { ConnectButton } from '@oyster/common';
+
+const getDefaultLinkActions = (connected: boolean) => {
+  return [
+    <Link to={`/`}>
+            {/* <Image className="logo" src="./img/logo.png" preview={false} /> */}
+          
+            <img src="./Sollogo.png" alt="Sollogo.png"/>
+          </Link>,
+    <input type="text" className="header-search"  name="search" placeholder="Search Item or Collection"/>
+
+   
+    
+  ];
+};
+
+const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
+  const { connected } = useWallet();
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: vertical ? 'column' : 'row',
+      }}
+    >
+      {getDefaultLinkActions(connected)}
+    </div>
+  );
+};
+
+const MetaplexMenu = () => {
+  const { width } = useWindowDimensions();
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const { connected } = useWallet();
+
+  if (width < 768)
+    return (
+      <>
+        <Modal
+          // title={<img src={'/metaplex-logo.svg'} />}
+          // visible={isModalVisible}
+          // footer={null}
+          // className={'modal-box'}
+          // closeIcon={
+          //   <img
+          //     onClick={() => setIsModalVisible(false)}
+          //     src={'/modals/close.svg'}
+          //   />
+          // }
+        >
+          <div className="site-card-wrapper mobile-menu-modal">
+            <Menu onClick={() => setIsModalVisible(false)}>
+              {getDefaultLinkActions(connected).map((item, idx) => (
+                <Menu.Item key={idx}>{item}</Menu.Item>
+              ))}
+            </Menu>
+            <div className="actions">
+              {!connected ? (
+                <div className="actions-buttons">
+                  <ConnectButton
+                    onClick={() => setIsModalVisible(false)}
+                    className="secondary-btn"
+                  />
+                  <HowToBuyModal
+                    onClick={() => setIsModalVisible(false)}
+                    buttonClassName="black-btn"
+                  />
+                </div>
+              ) : (
+                <>
+                  <CurrentUserBadgeMobile
+                    showBalance={false}
+                    showAddress={true}
+                    iconSize={24}
+                    closeModal={() => {
+                      setIsModalVisible(false);
+                    }}
+                  />
+                  <Notifications />
+                  <Cog />
+                </>
+              )}
+            </div>
+          </div>
+        </Modal>
+        <MenuOutlined
+          onClick={() => setIsModalVisible(true)}
+          style={{ fontSize: '1.4rem' }}
+        />
+      </>
+    );
+
+  return <DefaultActions />;
+};
+
+// export const LogoLink = () => {
+//   return (
+//     <Link to={`/`}>
+//       <img src={'/metaplex-logo.svg'} />
+//     </Link>
+//   );
+// };
+
+export const AppBar = () => {
+  const { connected } = useWallet();
+  return (
+    <>
+      <div id="mobile-navbar">
+        {/* <LogoLink /> */}
+        <MetaplexMenu />
+      </div>
+      <div id="desktop-navbar">
+        <div className="app-left">
+          {/* <LogoLink /> */}
+          &nbsp;&nbsp;&nbsp;
+          <MetaplexMenu />
+        </div>
+        <div className="app-right">
+        <Link to={`/`} key={'explore'}>
+      <Button className="app-btn">Home</Button>
+    </Link>
+    <Link to={`/market`} key={'market'}>
+      <Button className="app-btn">Marketplace</Button>
+    </Link>
+    <Link to={`/artworks`} key={'artwork'}>
+      <Button className="app-btn">{connected ? 'My Items' : 'Artwork'}</Button>
+    </Link>
+    <Link to={`/artists`} key={'artists'}>
+      <Button className="app-btn">Creators</Button>
+    </Link>
+    <Link to={`/about`} key={'about'}>
+      <Button className="app-btn">About</Button>
+    </Link>
+    <Link to={`/blog`} key={'blog'}>
+      <Button className="app-btn">Blog</Button> 
+    </Link>
+          {!connected && (
+            <HowToBuyModal buttonClassName="modal-button-default" />
+          )}
+          {!connected && (
+            <ConnectButton style={{ height: 48 }} allowWalletChange />
+          )}
+          {connected && (
+            <>
+              <CurrentUserBadge
+                showBalance={false}
+                showAddress={true}
+                iconSize={24}
+              />
+              <Notifications />
+              <Cog />
+            </>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
